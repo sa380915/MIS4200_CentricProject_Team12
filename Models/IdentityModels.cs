@@ -25,9 +25,15 @@ namespace MIS4200_CentricProject_Team12.Models
         {
         }
 
+        public object User { get; internal set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MIS4200_CentricProject_Team12.Models.Recognition> Recognitions { get; set; }
+
+        public System.Data.Entity.DbSet<MIS4200_CentricProject_Team12.Models.recognitonDetails> recognitonDetails { get; set; }
     }
 }
