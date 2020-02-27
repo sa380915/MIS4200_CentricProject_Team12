@@ -1,4 +1,4 @@
-﻿@model MIS4200_CentricProject_Team12.Models.Recognition
+﻿@model MIS4200_CentricProject_Team12.Models.recognitionDetails
 
 @{
     ViewBag.Title = "Delete";
@@ -8,7 +8,7 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Recognition</h4>
+    <h4>recognitionDetails</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,11 +20,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.description)
+            @Html.DisplayNameFor(model => model.explanation)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.description)
+            @Html.DisplayFor(model => model.explanation)
         </dd>
 
     </dl>

@@ -1,4 +1,4 @@
-﻿@model MIS4200_CentricProject_Team12.Models.Recognition
+﻿@model MIS4200_CentricProject_Team12.Models.recognitionDetails
 
 @{
     ViewBag.Title = "Details";
@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Recognition</h4>
+    <h4>recognitionDetails</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -19,16 +19,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.description)
+            @Html.DisplayNameFor(model => model.explanation)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.description)
+            @Html.DisplayFor(model => model.explanation)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.recognitionId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.recognitionDetailsId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

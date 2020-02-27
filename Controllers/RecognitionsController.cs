@@ -46,7 +46,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "recongitionId,description")] Recognition recognition)
+        public ActionResult Create([Bind(Include = "recognitionId,recognitionTitle,description")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "recongitionId,description")] Recognition recognition)
+        public ActionResult Edit([Bind(Include = "recognitionId,recognitionTitle,description")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {

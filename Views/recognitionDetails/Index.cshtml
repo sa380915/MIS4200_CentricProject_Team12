@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MIS4200_CentricProject_Team12.Models.recognitonDetails>
+﻿@model IEnumerable<MIS4200_CentricProject_Team12.Models.recognitionDetails>
 
 @{
     ViewBag.Title = "Index";
@@ -11,11 +11,23 @@
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.recognitionTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.explanation)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.recognitionTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.explanation)
+        </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.recognitionDetailsId }) |
             @Html.ActionLink("Details", "Details", new { id=item.recognitionDetailsId }) |
