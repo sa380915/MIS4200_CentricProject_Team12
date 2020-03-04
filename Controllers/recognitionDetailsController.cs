@@ -17,7 +17,8 @@ namespace MIS4200_CentricProject_Team12.Controllers
         // GET: recognitionDetails
         public ActionResult Index()
         {
-            return View(db.recognitionDetails.ToList());
+            var recognitionDetails = db.recognitionDetails.Include(r => r.Employee).Include(r => r.Recognition);
+            return View(recognitionDetails.ToList());
         }
 
         // GET: recognitionDetails/Details/5
@@ -38,6 +39,8 @@ namespace MIS4200_CentricProject_Team12.Controllers
         // GET: recognitionDetails/Create
         public ActionResult Create()
         {
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName");
+            ViewBag.recognitionId = new SelectList(db.Recognitions, "recognitionId", "recognitionTitle");
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "recognitionDetailsId,recognitionTitle,explanation")] recognitionDetails recognitionDetails)
+        public ActionResult Create([Bind(Include = "recognitionDetailsId,employeeId,explanation,recognitionId")] recognitionDetails recognitionDetails)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +58,8 @@ namespace MIS4200_CentricProject_Team12.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName", recognitionDetails.employeeId);
+            ViewBag.recognitionId = new SelectList(db.Recognitions, "recognitionId", "recognitionTitle", recognitionDetails.recognitionId);
             return View(recognitionDetails);
         }
 
@@ -70,6 +75,8 @@ namespace MIS4200_CentricProject_Team12.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName", recognitionDetails.employeeId);
+            ViewBag.recognitionId = new SelectList(db.Recognitions, "recognitionId", "recognitionTitle", recognitionDetails.recognitionId);
             return View(recognitionDetails);
         }
 
@@ -78,7 +85,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "recognitionDetailsId,recognitionTitle,explanation")] recognitionDetails recognitionDetails)
+        public ActionResult Edit([Bind(Include = "recognitionDetailsId,employeeId,explanation,recognitionId")] recognitionDetails recognitionDetails)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,8 @@ namespace MIS4200_CentricProject_Team12.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "firstName", recognitionDetails.employeeId);
+            ViewBag.recognitionId = new SelectList(db.Recognitions, "recognitionId", "recognitionTitle", recognitionDetails.recognitionId);
             return View(recognitionDetails);
         }
 
