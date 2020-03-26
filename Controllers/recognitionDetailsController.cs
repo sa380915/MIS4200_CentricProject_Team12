@@ -6,18 +6,19 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MIS4200_CentricProject_Team12.DAL;
 using MIS4200_CentricProject_Team12.Models;
 
 namespace MIS4200_CentricProject_Team12.Controllers
 {
     public class recognitionDetailsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private MIS4200Context db = new MIS4200Context();
 
         // GET: recognitionDetails
         public ActionResult Index()
         {
-            var recognitionDetails = db.recognitionDetails.Include(r => r.Employee).Include(r => r.Recognition);
+            var recognitionDetails = db.RecognitionDetails.Include(r => r.Employee).Include(r => r.Recognition);
             return View(recognitionDetails.ToList());
         }
 
@@ -28,7 +29,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            recognitionDetails recognitionDetails = db.recognitionDetails.Find(id);
+            recognitionDetails recognitionDetails = db.RecognitionDetails.Find(id);
             if (recognitionDetails == null)
             {
                 return HttpNotFound();
@@ -53,7 +54,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.recognitionDetails.Add(recognitionDetails);
+                db.RecognitionDetails.Add(recognitionDetails);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -70,7 +71,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            recognitionDetails recognitionDetails = db.recognitionDetails.Find(id);
+            recognitionDetails recognitionDetails = db.RecognitionDetails.Find(id);
             if (recognitionDetails == null)
             {
                 return HttpNotFound();
@@ -105,7 +106,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            recognitionDetails recognitionDetails = db.recognitionDetails.Find(id);
+            recognitionDetails recognitionDetails = db.RecognitionDetails.Find(id);
             if (recognitionDetails == null)
             {
                 return HttpNotFound();
@@ -118,8 +119,8 @@ namespace MIS4200_CentricProject_Team12.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            recognitionDetails recognitionDetails = db.recognitionDetails.Find(id);
-            db.recognitionDetails.Remove(recognitionDetails);
+            recognitionDetails recognitionDetails = db.RecognitionDetails.Find(id);
+            db.RecognitionDetails.Remove(recognitionDetails);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

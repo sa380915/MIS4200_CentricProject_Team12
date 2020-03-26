@@ -15,6 +15,9 @@ namespace MIS4200_CentricProject_Team12.Models
         public string recognitionTitle { get; set; }
         [Display(Name = "Recognition Description")]
         public string description { get; set; }
+        //[Display(Name = "Point Value")]
+        //public int recognitionPoints { get; set; }
+
         public ICollection<recognitionDetails> recognitionDetails { get; set; }
 
     }

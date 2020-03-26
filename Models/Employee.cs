@@ -28,7 +28,7 @@ namespace MIS4200_CentricProject_Team12.Models
         [RegularExpression(@"^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}$",
             ErrorMessage = "Phone numbers must be in the format (xxx) xxx-xxxx or xxx-xxx-xxxx")]
         public string phone { get; set; }
-        [Display(Name = "Date you joined the school")]
+        [Display(Name = "Date you joined the company")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> employeeSince { get; set; }

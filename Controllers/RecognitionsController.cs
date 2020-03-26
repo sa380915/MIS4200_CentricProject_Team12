@@ -6,13 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MIS4200_CentricProject_Team12.DAL;
 using MIS4200_CentricProject_Team12.Models;
 
 namespace MIS4200_CentricProject_Team12.Controllers
 {
     public class RecognitionsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private MIS4200Context db = new MIS4200Context();
 
         // GET: Recognitions
         public ActionResult Index()
