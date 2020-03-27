@@ -7,7 +7,8 @@
 <h2>Centric Employees</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    
+    @*Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
@@ -48,8 +49,8 @@
         </td>
         <td>
             @*@Html.ActionLink("Edit", "Edit", new { id=item.employeeId }) |*@
-            @Html.ActionLink("Details", "Details", new { id=item.employeeId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.employeeId })
+            @Html.ActionLink("Details", "Details", new { id=item.employeeId }) 
+            @*Html.ActionLink("Delete", "Delete", new { id=item.employeeId })*@
         </td>
     </tr>
 }
