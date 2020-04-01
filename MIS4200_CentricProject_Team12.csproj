@@ -177,6 +177,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\MISContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -247,16 +248,16 @@
     <Content Include="Views\recognitionDetails\Details.cshtml" />
     <Content Include="Views\recognitionDetails\Edit.cshtml" />
     <Content Include="Views\recognitionDetails\Index.cshtml" />
-    <Content Include="Views\Recognitions\Create.cshtml" />
-    <Content Include="Views\Recognitions\Delete.cshtml" />
-    <Content Include="Views\Recognitions\Details.cshtml" />
-    <Content Include="Views\Recognitions\Edit.cshtml" />
-    <Content Include="Views\Recognitions\Index.cshtml" />
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Recognitions\Create.cshtml" />
+    <Content Include="Views\Recognitions\Delete.cshtml" />
+    <Content Include="Views\Recognitions\Details.cshtml" />
+    <Content Include="Views\Recognitions\Edit.cshtml" />
+    <Content Include="Views\Recognitions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
