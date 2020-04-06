@@ -17,6 +17,10 @@ namespace MIS4200_CentricProject_Team12.Models
         [Display(Name = "Recognition Explanation")]
         [Required(ErrorMessage = "Recognition explanation required. Must be 200 characters or less.")]
         [StringLength(200)]
+
+        public string recognizedby { get; set; }
+       [Display(Name = "Recognized By")]
+        [Required]
         public string explanation { get; set; }
         [Display(Name = "Recognition")]
         [Required]
