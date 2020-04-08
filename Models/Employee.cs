@@ -8,7 +8,8 @@ namespace MIS4200_CentricProject_Team12.Models
 {
     public class Employee
     {
-       
+        internal Guid id;
+
         //public System.Guid EID { get; set; }
         public int employeeId { get; set; }
         [Display(Name = "First Name")]

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using MIS4200_CentricProject_Team12.DAL;
 using MIS4200_CentricProject_Team12.Models;
 
@@ -51,6 +52,9 @@ namespace MIS4200_CentricProject_Team12.Controllers
         {
             if (ModelState.IsValid)
             {
+                Guid employeeId;
+                Guid.TryParse(User.Identity.GetUserId(), out employeeId);
+                employee.id = employeeId;
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
