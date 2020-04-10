@@ -13,8 +13,8 @@ namespace MIS4200_CentricProject_Team12.Models
         public int recognitionId { get; set; }
         [Display(Name = "Recognition Title")]
        public string recognizedBy { get; set; }
-        [Display(Name = "Recognized By")]
-        public string recognitionTitle { get; set; }
+        //[Display(Name = "Recognition Title")]
+        //public string recognitionTitle { get; set; }
         [Display(Name = "Recognition Description")]
         public string description { get; set; }
         [Display(Name = "Point Value")]

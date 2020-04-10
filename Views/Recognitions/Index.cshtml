@@ -9,10 +9,29 @@
 <p>
     @*Html.ActionLink("Create New", "Create")*@
 </p>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.recognitionTitle)
+            @Html.DisplayNameFor(model => model.recognizedBy)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.description)
@@ -26,7 +45,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.recognitionTitle)
+            @Html.DisplayFor(modelItem => item.recognizedBy)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.description)
@@ -35,9 +54,9 @@
             @Html.DisplayFor(modelItem => item.recognitionPoints)
         </td>
         <td>
-            @*Html.ActionLink("Edit", "Edit", new { id=item.recognitionId }) |*@
-            @*Html.ActionLink("Details", "Details", new { id=item.recognitionId }) |*@
-            @*Html.ActionLink("Delete", "Delete", new { id=item.recognitionId })*@
+            @*Html.ActionLink("Edit", "Edit", new { id=item.recognitionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.recognitionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.recognitionId })*@
         </td>
     </tr>
 }
