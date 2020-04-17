@@ -55,6 +55,7 @@ namespace MIS4200_CentricProject_Team12.Controllers
                 Guid employeeId;
                 Guid.TryParse(User.Identity.GetUserId(), out employeeId);
                 employee.id = employeeId;
+                //employee.email = User.Identity.GetUserName();
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
 
 namespace MIS4200_CentricProject_Team12.Models
 {
@@ -12,28 +13,32 @@ namespace MIS4200_CentricProject_Team12.Models
 
         //public System.Guid EID { get; set; }
         public int employeeId { get; set; }
+        
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "Employee first name is required")]
         [StringLength(20)]
         public string firstName { get; set; }
+        
         [Display(Name = "Last Name")]
         [Required]
         [StringLength(20)]
         public string lastName { get; set; }
+
         [Display(Name = "Email")]
         [Required]
-        [EmailAddress(ErrorMessage = "Enter your most frequently used email address")]
+        [EmailAddress(ErrorMessage = "Enter your email address")]
         public string email { get; set; }
+       
         [Display(Name = "Mobile Phone Number")]
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^(\(\d{3}\) |\d{3}-)\d{3}-\d{4}$",
             ErrorMessage = "Phone numbers must be in the format (xxx) xxx-xxxx or xxx-xxx-xxxx")]
         public string phone { get; set; }
+        
         [Display(Name = "Date you joined the company")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> employeeSince { get; set; }
-
 
         public ICollection<recognitionDetails> recognitionDetails { get; set; }
         public string fullName
