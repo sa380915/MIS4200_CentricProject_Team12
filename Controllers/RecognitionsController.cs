@@ -9,6 +9,7 @@ using MIS4200_CentricProject_Team12.DAL;
 using MIS4200_CentricProject_Team12.Models;
 using System.Net;
 using System.Net.Mail;
+using Microsoft.AspNet.Identity;
 
 namespace MIS4200_CentricProject_Team12.Controllers
 {
@@ -76,10 +77,14 @@ namespace MIS4200_CentricProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "recognitionId,recognizedBy,description,recognitionPoints")] Recognition recognition)
+        public ActionResult Create([Bind(Include = "recognitionId,recognizedby,description,recognitionPoints")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
+                //Guid empId;
+                //Guid.TryParse(User.Identity.GetUserId(), out empId);
+                //recognitionDetails.recognizedby = empId;
+
                 db.Recognitions.Add(recognition);
                 db.SaveChanges();
                 return RedirectToAction("Index");

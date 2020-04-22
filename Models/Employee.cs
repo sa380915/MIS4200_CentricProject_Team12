@@ -9,10 +9,10 @@ namespace MIS4200_CentricProject_Team12.Models
 {
     public class Employee
     {
-        internal Guid id;
+      
 
         //public System.Guid EID { get; set; }
-        public int employeeId { get; set; }
+        public Guid employeeId { get; set; }
         
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "Employee first name is required")]
@@ -25,8 +25,6 @@ namespace MIS4200_CentricProject_Team12.Models
         public string lastName { get; set; }
 
         [Display(Name = "Email")]
-        [Required]
-        [EmailAddress(ErrorMessage = "Enter your email address")]
         public string email { get; set; }
        
         [Display(Name = "Mobile Phone Number")]

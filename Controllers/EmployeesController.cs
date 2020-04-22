@@ -48,14 +48,14 @@ namespace MIS4200_CentricProject_Team12.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "employeeId,firstName,lastName,email,phone,employeeSince")] Employee employee)
+        public ActionResult Create([Bind(Include = "employeeId,firstName,lastName,phone,employeeSince")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                Guid employeeId;
-                Guid.TryParse(User.Identity.GetUserId(), out employeeId);
-                employee.id = employeeId;
-                //employee.email = User.Identity.GetUserName();
+                Guid empId;
+                Guid.TryParse(User.Identity.GetUserId(), out empId);
+                employee.employeeId = empId;
+                employee.email = User.Identity.GetUserName();
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
