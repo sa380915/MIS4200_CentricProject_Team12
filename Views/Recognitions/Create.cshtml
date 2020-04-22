@@ -6,11 +6,26 @@
 
 <h2>Create</h2>
 
+<h2>Email test results</h2>
+@{
+    if (TempData["mailError"] != null && TempData["mailError"] != "")
+    {
+        <h3>
+            The following error occurred while trying to send the email message:
+            @TempData["mailError"].ToString()
+        </h3>
+  
+    }
+    else
+    {
+        <h3>Email sent</h3>
+    }
+}
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Recognition</h4>
         <hr />
