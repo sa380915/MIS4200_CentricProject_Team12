@@ -23,11 +23,11 @@ namespace MIS4200_CentricProject_Team12.Models
 
         [Display(Name = "Recognized By")]
         [Required]
-        public Guid recognizedby { get; set; }
+        public int recognizedby { get; set; }
 
         [Display(Name = "Recognition")]
         [Required]
-        public Guid recognitionId { get; set; }
+        public int recognitionId { get; set; }
         public virtual Recognition Recognition { get; set; }
 
         //public ICollection<Recognition> Recognitions { get; set; }
