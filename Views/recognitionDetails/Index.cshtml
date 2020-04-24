@@ -1,33 +1,14 @@
 ﻿@model IEnumerable<MIS4200_CentricProject_Team12.Models.recognitionDetails>
 
 @{
-    ViewBag.Title = "Recognize a Colleague";
+    ViewBag.Title = "Index";
 }
 
-    <h2>Recognize a Colleague</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
-<style>
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td, th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
-</style>
-
 <table class="table">
     <tr>
         <th>
@@ -37,10 +18,10 @@
             @Html.DisplayNameFor(model => model.Recognition.recognizedBy)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.recognizedby)
+            @Html.DisplayNameFor(model => model.explanation)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.explanation)
+            @Html.DisplayNameFor(model => model.recognizedby)
         </th>
         <th></th>
     </tr>
@@ -54,15 +35,15 @@
             @Html.DisplayFor(modelItem => item.Recognition.recognizedBy)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.recognizedby)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.explanation)
         </td>
         <td>
-            @*Html.ActionLink("Edit", "Edit", new { id=item.recognitionDetailsId }) |
+            @Html.DisplayFor(modelItem => item.recognizedby)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.recognitionDetailsId }) |
             @Html.ActionLink("Details", "Details", new { id=item.recognitionDetailsId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.recognitionDetailsId })*@
+            @Html.ActionLink("Delete", "Delete", new { id=item.recognitionDetailsId })
         </td>
     </tr>
 }
