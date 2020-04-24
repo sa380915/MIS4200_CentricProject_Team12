@@ -23,7 +23,7 @@ namespace MIS4200_CentricProject_Team12.Models
 
         [Display(Name = "Recognized By")]
         [Required]
-        public string recognizedby { get; set; }
+        public int recognizedby { get; set; }
 
         [Display(Name = "Recognition")]
         [Required]
